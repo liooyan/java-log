@@ -13,8 +13,7 @@ import java.util.logging.Logger;
 public class Test1 {
 
     public static void main(String[] args) {
-        LogManager manager = LogManager.getLogManager();
-        System.setProperty("java.util.logging.config.file", "C:\\work\\idea_work\\java-log\\jul\\src\\main\\resources\\logging.properties");
+        System.setProperty("java.util.logging.config.file", Test1.class.getClassLoader().getResource("logging.properties").getPath());
         Logger logger = Logger.getLogger("com.leon.JULTest");
         Logger logger2 = Logger.getLogger("com.leon");
         Logger logger3 = Logger.getLogger("com");
